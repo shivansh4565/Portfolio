@@ -24,8 +24,8 @@ I build responsive and modern web applications using **React, TypeScript, Tailwi
 ## Projects
 
 1. **Portfolio Website** – Personal website showcasing projects and skills.  
-   - Live: [Portfolio](https://your-portfolio-link.com)  
-   - GitHub: [Repo](https://github.com/your-username/portfolio)
+   - Live: [Portfolio](https://portfolio-eta-ten-39.vercel.app/)  
+   - GitHub: [Repo](https://github.com/shivansh4565/portfolio)
 
 2. **PassOp – Password Manager**  
    - Live: [PassOp](https://passop-wheat.vercel.app/)  
