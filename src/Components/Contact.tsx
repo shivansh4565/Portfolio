@@ -44,7 +44,7 @@ const Contact = () => {
         muted
         playsInline
       >
-        <source src="/vid3.mp4" type="video/mp4" />
+        <source src="/contact.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
