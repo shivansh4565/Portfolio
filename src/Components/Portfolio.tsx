@@ -49,11 +49,22 @@ const PortfolioSection = () => {
       title: "Taskify",
       subtitle: "Task Management Application to organize your tasks efficiently",
     },
+     {
+      image: "/Intervia.png",
+      title: "Intervia",
+      subtitle: "AI-Powered Interview Intelligence Platform for Real-World Hiring Readiness",
+    },
     {
       image: "/data.jpeg",
       title: "Hotel cancellation prediction & analysis-using Data analytics",
       subtitle: "Data Analysis Project on Hotel booking cancellations",
     },
+      {
+      image: "/Amazon.jpg",
+      title: "Amazon Supply chain Logistics Dashobard",
+      subtitle: "Build a Dashboard using PowerBi and MySQL & Python Libraries",
+    },
+      
   ];
 
   return (
