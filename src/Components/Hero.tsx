@@ -43,7 +43,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="/resume.pdf" 
+            href="/Shivansh_Saxena_FULLSTACK RESUME.pdf" 
             target="_blank" // Opens in new tab
             rel="noopener noreferrer"
           >
