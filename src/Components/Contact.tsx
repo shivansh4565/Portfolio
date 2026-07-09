@@ -1,141 +1,385 @@
-import React from 'react';
-import type { FormEvent } from 'react';
+import React from "react";
+import type { FormEvent } from "react";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setResult("Sending....");
+
+    setLoading(true);
+    setResult("");
 
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    formData.append("access_key", "51876399-ca9b-4820-ada2-9729b5aa883a");
+    formData.append(
+      "access_key",
+      "51876399-ca9b-4820-ada2-9729b5aa883a"
+    );
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await response.json();
 
       if (data.success) {
-        setResult("Form Submitted Successfully");
+        setResult("✅ Message sent successfully.");
         form.reset();
       } else {
-        console.log("Error", data);
-        setResult(data.message || "Something went wrong");
+        setResult(data.message);
       }
-    } catch (error) {
-      console.error("Fetch error:", error);
-      setResult("An error occurred. Please try again later.");
+    } catch (err) {
+      console.error(err);
+      setResult("Something went wrong.");
     }
+
+    setLoading(false);
   };
 
   return (
-    <section id="contact" className="relative bg-black text-white py-24 px-6 md:px-20 overflow-hidden">
-      {/* Background Video */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/contact.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-[#050505] py-28 text-white"
+    >
+      {/* Background Glow */}
 
-      {/* Optional dark overlay for readability */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-0" />
+      <div className="absolute -top-32 -left-20 h-[450px] w-[450px] rounded-full bg-purple-600/20 blur-[150px]" />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
-        {/* Left - Contact Info */}
-        <div>
-          <h2 className="text-5xl font-extrabold mb-6">
-            Let's{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-500">
-              talk
+      <div className="absolute bottom-0 right-0 h-[450px] w-[450px] rounded-full bg-pink-500/20 blur-[150px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+
+        {/* Heading */}
+
+        <div className="text-center">
+
+          <span className="rounded-full border border-purple-500/30 bg-purple-500/10 px-5 py-2 text-sm text-purple-300">
+            CONTACT
+          </span>
+
+          <h2 className="mt-6 text-5xl font-bold">
+
+            Let's{" "}
+
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+              Build Something Amazing
             </span>
+
           </h2>
-          <p className="text-gray-300 text-lg mb-10 leading-relaxed">
-            I'm currently available to take on new projects, so feel free to send me a message
-            about anything that you want me to work on. You can contact anytime.
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+            I'm actively looking for AI/ML Engineer, Generative AI,
+            Agentic AI and Full Stack Developer opportunities.
+            Whether you have an exciting project, internship,
+            or simply want to connect, I'd love to hear from you.
           </p>
 
-          <div className="space-y-6 text-lg">
-            <div className="flex items-center gap-4">
-              <span className="text-2xl">📧</span>
-              <span>codewithshivansh27@gmail.com</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-2xl">📞</span>
-              <span>+91 84330 55364</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-2xl">📍</span>
-              <span>Greater Noida, India</span>
-            </div>
-          </div>
         </div>
 
-        {/* Right - Form */}
-        <form onSubmit={onSubmit} className="space-y-8">
-          <div>
-            <label className="block text-lg font-medium mb-2">Your Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-              required
-              className="w-full bg-gray-900 text-white text-lg rounded-xl px-6 py-4 focus:outline-none"
-            />
-          </div>
-          <div>
-            <label className="block text-lg font-medium mb-2">Your Email</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-              className="w-full bg-gray-900 text-white text-lg rounded-xl px-6 py-4 focus:outline-none"
-            />
-          </div>
-          <div>
-            <label className="block text-lg font-medium mb-2">Write your message here</label>
-            <textarea
-              name="message"
-              rows={6}
-              placeholder="Enter your message"
-              required
-              className="w-full bg-gray-900 text-white text-lg rounded-xl px-6 py-4 focus:outline-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-gradient-to-r from-purple-500 to-orange-400 text-white text-lg font-semibold px-8 py-4 rounded-full transition-transform hover:scale-105"
-          >
-            Submit now
-          </button>
+        {/* Main Layout */}
 
-          {result && (
-            <p className="mt-4 text-center text-sm text-green-400">{result}</p>
-          )}
-        </form>
-      </div>
+        <div className="mt-20 grid gap-12 lg:grid-cols-2">
 
-      {/* Footer */}
-      <div className="relative z-10 mt-24 border-t border-white/20 pt-10 flex flex-col md:flex-row items-center justify-between text-base text-white/80 gap-4">
-        <p>© 2025 Shivansh Saxena. All rights reserved.</p>
-        <div className="flex gap-8">
-          <a href="#" className="hover:text-white">Term of Services</a>
-          <a href="#" className="hover:text-white">Privacy Policy</a>
-          <a href="#" className="hover:text-white">Connect with me</a>
+          {/* LEFT */}
+
+          <div className="space-y-8">
+
+            {/* Availability */}
+
+            <div className="rounded-3xl border border-green-500/20 bg-green-500/10 p-6">
+
+              <h3 className="text-2xl font-semibold text-green-400">
+                🟢 Available
+              </h3>
+
+              <p className="mt-3 text-gray-300">
+                Open to Full-Time, Internship,
+                AI/ML Engineer, GenAI Engineer,
+                Agentic AI and Full Stack roles.
+              </p>
+
+            </div>
+
+            {/* Contact Cards */}
+
+            <div className="space-y-5">
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+
+                <h4 className="text-lg font-semibold text-purple-400">
+                  📧 Email
+                </h4>
+
+                <p className="mt-2 text-gray-300">
+                  shivanshsaxena108@gmail.com
+                </p>
+
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+
+                <h4 className="text-lg font-semibold text-purple-400">
+                  📱 Phone
+                </h4>
+
+                <p className="mt-2 text-gray-300">
+                  +91 84330 55364
+                </p>
+
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+
+                <h4 className="text-lg font-semibold text-purple-400">
+                  📍 Location
+                </h4>
+
+                <p className="mt-2 text-gray-300">
+                  Greater Noida, Uttar Pradesh, India
+                </p>
+
+              </div>
+
+            </div>
+
+            {/* Social Buttons */}
+
+            <div className="flex flex-wrap gap-4">
+
+              <a
+                href="https://github.com/shivansh4565"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 hover:border-purple-500 transition"
+              >
+                GitHub
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/s4565"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 hover:border-purple-500 transition"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href="/Shivansh_Saxena_Resume.pdf"
+                target="_blank"
+                className="rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 font-semibold"
+              >
+                Resume
+              </a>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT */}
+
+          <div className="rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-2xl">
+
+            <form
+              onSubmit={onSubmit}
+              className="space-y-6"
+            >
+
+              <div>
+
+                <label className="mb-2 block text-gray-300">
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="John Doe"
+                  className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-purple-500"
+                />
+
+              </div>
+
+              <div>
+
+                <label className="mb-2 block text-gray-300">
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="john@example.com"
+                  className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-purple-500"
+                />
+
+              </div>
+
+              <div>
+
+                <label className="mb-2 block text-gray-300">
+                  Subject
+                </label>
+
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Project Discussion"
+                  className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-purple-500"
+                />
+
+              </div>
+
+                            <div>
+
+                <label className="mb-2 block text-gray-300">
+                  Message
+                </label>
+
+                <textarea
+                  name="message"
+                  rows={6}
+                  required
+                  placeholder="Tell me about your project..."
+                  className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-purple-500 resize-none"
+                />
+
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="
+                w-full
+                rounded-xl
+                bg-gradient-to-r
+                from-purple-600
+                via-pink-600
+                to-orange-500
+                py-4
+                font-semibold
+                text-white
+                transition
+                duration-300
+                hover:scale-[1.02]
+                hover:shadow-[0_0_35px_rgba(168,85,247,.35)]
+                disabled:opacity-60
+                disabled:cursor-not-allowed
+              "
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+
+              {result && (
+                <div
+                  className={`
+                  rounded-xl
+                  border
+                  p-4
+                  text-center
+                  ${
+                    result.includes("success")
+                      ? "border-green-500/30 bg-green-500/10 text-green-400"
+                      : "border-red-500/30 bg-red-500/10 text-red-400"
+                  }
+                `}
+                >
+                  {result}
+                </div>
+              )}
+
+            </form>
+
+          </div>
+
         </div>
+
+        {/* Footer */}
+
+        <footer className="mt-24 border-t border-white/10 pt-10">
+
+          <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+
+            <div>
+
+              <h3 className="text-2xl font-bold">
+                Shivansh{" "}
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+                  Saxena
+                </span>
+              </h3>
+
+              <p className="mt-2 text-gray-500">
+                AI/ML Engineer • Generative AI • Agentic AI • Full Stack Developer
+              </p>
+
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-5">
+
+              <a
+                href="https://github.com/shivansh4565"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 transition hover:border-purple-500 hover:bg-white/10"
+              >
+                GitHub
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/s4565"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 transition hover:border-purple-500 hover:bg-white/10"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href="/Shivansh_Saxena_Resume.pdf"
+                target="_blank"
+                className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 transition hover:border-purple-500 hover:bg-white/10"
+              >
+                Resume
+              </a>
+
+              <a
+                href="mailto:shivanshsaxena108@gmail.com"
+                className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 transition hover:border-purple-500 hover:bg-white/10"
+              >
+                Email
+              </a>
+
+            </div>
+
+          </div>
+
+          <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-gray-500 md:flex-row">
+
+            <p>
+              © {new Date().getFullYear()} Shivansh Saxena. All rights reserved.
+            </p>
+
+            <p>
+              Built with React • TypeScript • Tailwind CSS
+            </p>
+
+          </div>
+
+        </footer>
+
       </div>
+
     </section>
   );
 };
