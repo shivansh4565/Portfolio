@@ -43,7 +43,7 @@ const Contact = () => {
 
     setLoading(false);
   };
-return (
+  return (
   <section
     id="contact"
     className="relative overflow-hidden bg-transparent py-28 text-white"
@@ -386,7 +386,6 @@ return (
   </form>
 
 </div>
-
 
         {/* Footer */}
 
