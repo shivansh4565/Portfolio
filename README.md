@@ -18,6 +18,6 @@ A modern developer portfolio showcasing my projects, technical skills, and exper
 
 ## 📫 Connect with Me
 
-- **Email:** codewithshivansh27@gmail.com
+- **Email:** codewithshivansh27@gmail.com  ||  shivanshsaxena108@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/shivansh4565
 - **GitHub:** https://github.com/shivansh4565
