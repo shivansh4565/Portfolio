@@ -234,7 +234,7 @@ const Hero = () => {
 {/* Stats */}
 
           {/* Stats */}
-
+{/* 
 <div className="mt-16 flex flex-wrap gap-10">
 
   <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-8 py-6 backdrop-blur-xl">
@@ -273,7 +273,7 @@ const Hero = () => {
 
   </div>
 
-</div>
+</div> */}
 
 </div>
 
