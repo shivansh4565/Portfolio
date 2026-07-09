@@ -172,7 +172,7 @@ const Hero = () => {
           >
 
             <video
-              src="/vid2.mp4"
+              src="/vid3.mp4"
               autoPlay
               muted
               loop
