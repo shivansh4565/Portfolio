@@ -79,25 +79,82 @@ const Hero = () => {
             </a>
 
             <a
-              href="/Shivansh_Saxena_AI_ML_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-              rounded-xl
-              border
-              border-white/10
-              bg-white/5
-              px-7
-              py-4
-              font-semibold
-              hover:bg-white
-              hover:text-black
-              transition
-            "
-            >
-              AI/ML Resume
-            </a>
+           <div className="relative group">
 
+  <button
+    className="
+      rounded-xl
+      border
+      border-white/10
+      bg-white/5
+      px-7
+      py-4
+      font-semibold
+      hover:bg-white
+      hover:text-black
+      transition
+    "
+  >
+    Resume ▼
+  </button>
+
+  <div
+    className="
+      invisible
+      opacity-0
+      group-hover:visible
+      group-hover:opacity-100
+      absolute
+      left-0
+      mt-3
+      w-72
+      rounded-2xl
+      border
+      border-white/10
+      bg-[#111]
+      backdrop-blur-xl
+      shadow-2xl
+      transition-all
+      duration-300
+      z-50
+    "
+  >
+
+    {/* <a
+      href="/resumes/Shivansh_Saxena_AI_ML_Resume.pdf"
+      target="_blank"
+      className="block px-5 py-4 hover:bg-purple-500/20"
+    >
+      🤖 AI / ML Engineer Resume
+    </a> */}
+
+    <a
+      href="/Shivansh_Saxena_Fullstack.pdf"
+      target="_blank"
+      className="block px-5 py-4 hover:bg-purple-500/20"
+    >
+      💻 Full Stack Developer Resume
+    </a>
+
+    <a
+      href="/Shivansh_Saxena_aiml.pdf"
+      target="_blank"
+      className="block px-5 py-4 hover:bg-purple-500/20"
+    >
+      🚀  AI / ML Engineer Resume
+    </a>
+
+    {/* <a
+      href="/resumes/Shivansh_Saxena_Data_Analyst_Resume.pdf"
+      target="_blank"
+      className="block px-5 py-4 hover:bg-purple-500/20"
+    >
+      📊 Data Analyst Resume
+    </a> */}
+
+  </div>
+
+</div>
             <a
               href="https://github.com/shivansh4565"
               target="_blank"
