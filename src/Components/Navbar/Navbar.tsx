@@ -1,178 +1,150 @@
 import React, { useState } from "react";
 
-const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Expertise", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+const navLinks = [
+  { title: "About", href: "#about" },
+  { title: "Expertise", href: "#services" },
+  { title: "Projects", href: "#projects" },
+  { title: "Contact", href: "#contact" },
 ];
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const closeMenu = () => setIsOpen(false);
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
-
-      <nav
-        className="
-        w-full
-        max-w-7xl
-        rounded-2xl
-        border
-        border-white/10
-        bg-white/5
-        backdrop-blur-2xl
-        shadow-[0_0_30px_rgba(168,85,247,0.15)]
-      "
-      >
+    <header className="fixed top-4 left-0 w-full z-50 flex justify-center px-4">
+      <nav className="w-full max-w-7xl rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-lg">
         <div className="flex items-center justify-between px-8 py-4">
 
           {/* Logo */}
 
           <a
             href="#hero"
-            className="text-3xl font-bold tracking-wide"
+            className="text-xl md:text-2xl font-semibold tracking-tight text-white"
           >
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
-              Shivansh
-            </span>
+            Shivansh{" "}
+            <span className="text-purple-400">Saxena</span>
           </a>
 
           {/* Desktop */}
 
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-10">
 
-            {navItems.map((item) => (
+            {navLinks.map((link) => (
               <a
-                key={item.name}
-                href={item.href}
+                key={link.title}
+                href={link.href}
                 className="
                 relative
                 text-gray-300
                 hover:text-white
-                transition
+                transition-all
+                duration-300
 
                 after:absolute
                 after:left-0
-                after:-bottom-2
-                after:h-[2px]
+                after:-bottom-1
                 after:w-0
-                after:bg-gradient-to-r
-                after:from-purple-500
-                after:to-pink-500
+                after:h-[2px]
+                after:bg-purple-500
                 after:transition-all
                 hover:after:w-full
               "
               >
-                {item.name}
+                {link.title}
               </a>
             ))}
 
           </div>
 
-          {/* CTA */}
+          {/* Button */}
 
           <a
             href="#contact"
             className="
             hidden
-            lg:flex
+            md:flex
             items-center
             rounded-full
-            bg-gradient-to-r
-            from-purple-600
-            via-pink-600
-            to-orange-500
-            px-6
-            py-3
-            font-semibold
+            border
+            border-white/10
+            bg-white/5
+            px-5
+            py-2.5
+            text-sm
+            font-medium
             text-white
-            shadow-[0_0_20px_rgba(168,85,247,.35)]
-            hover:scale-105
-            hover:shadow-[0_0_35px_rgba(168,85,247,.55)]
+            hover:bg-white
+            hover:text-black
             transition-all
             duration-300
           "
           >
-            Let's Connect
+            Let's Talk
           </a>
 
-          {/* Mobile Button */}
+          {/* Mobile */}
 
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative h-8 w-8"
+            className="md:hidden text-white"
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            <span
-              className={`absolute h-[2px] w-7 bg-white transition-all ${
-                isOpen ? "rotate-45 top-4" : "top-2"
-              }`}
-            />
-
-            <span
-              className={`absolute top-4 h-[2px] w-7 bg-white transition-all ${
-                isOpen ? "opacity-0" : ""
-              }`}
-            />
-
-            <span
-              className={`absolute h-[2px] w-7 bg-white transition-all ${
-                isOpen ? "-rotate-45 top-4" : "top-6"
-              }`}
-            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-7 w-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
           </button>
-
         </div>
 
         {/* Mobile Menu */}
 
-        <div
-          className={`
-          overflow-hidden
-          transition-all
-          duration-500
-          ${isOpen ? "max-h-96 py-6" : "max-h-0"}
-        `}
-        >
-          <div className="flex flex-col items-center gap-6">
+        {menuOpen && (
+          <div className="md:hidden border-t border-white/10 px-8 pb-6 pt-4">
 
-            {navItems.map((item) => (
+            <div className="flex flex-col gap-5">
+
+              {navLinks.map((link) => (
+                <a
+                  key={link.title}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-gray-300 hover:text-white transition"
+                >
+                  {link.title}
+                </a>
+              ))}
+
               <a
-                key={item.name}
-                href={item.href}
-                onClick={closeMenu}
-                className="text-lg text-gray-300 hover:text-purple-400 transition"
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="mt-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-center text-white hover:bg-white hover:text-black transition"
               >
-                {item.name}
+                Let's Talk
               </a>
-            ))}
 
-            <a
-              href="#contact"
-              onClick={closeMenu}
-              className="
-              rounded-full
-              bg-gradient-to-r
-              from-purple-600
-              via-pink-600
-              to-orange-500
-              px-6
-              py-3
-              font-semibold
-              text-white
-            "
-            >
-              Let's Connect
-            </a>
+            </div>
 
           </div>
-        </div>
-
+        )}
       </nav>
-
     </header>
   );
 };
