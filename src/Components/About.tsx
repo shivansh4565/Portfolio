@@ -25,14 +25,14 @@ const skills = [
 
 const About = () => {
   return (
-    <section className="relative overflow-hidden bg-[#050505] text-white py-24 px-6 md:px-20">
+  <section className="relative overflow-hidden bg-transparent text-white py-24 px-6 md:px-20">
 
       {/* Animated Background */}
-      <div className="absolute top-10 left-10 h-72 w-72 rounded-full bg-purple-500/20 blur-[120px] animate-pulse"></div>
+      <div className="absolute top-10 left-10 h-72 w-72 rounded-full bg-violet-600/20 blur-[120px] animate-pulse"></div>
 
-      <div className="absolute bottom-10 right-10 h-72 w-72 rounded-full bg-pink-500/20 blur-[120px] animate-pulse"></div>
+      <div className="absolute bottom-10 right-10 h-72 w-72 rounded-full bg-fuchsia-600/20 blur-[120px] animate-pulse"></div>
 
-      <div className="absolute top-1/2 left-1/2 h-64 w-64 rounded-full bg-cyan-500/10 blur-[120px] animate-pulse"></div>
+      <div className="absolute top-1/2 left-1/2 h-64 w-64 rounded-full bg-violet-500/10 blur-[120px] animate-pulse"></div>
 
       <div className="relative z-10">
 
@@ -58,11 +58,11 @@ const About = () => {
               className="
               rounded-3xl
               overflow-hidden
-              bg-white/5
+              bg-white/[0.03]
               backdrop-blur-xl
               border
-              border-white/10
-              shadow-[0_0_60px_rgba(168,85,247,0.25)]
+              border-white/8
+              shadow-[0_0_40px_rgba(168,85,247,0.12)]
               hover:scale-105
               transition-all
               duration-700
@@ -104,14 +104,14 @@ const About = () => {
 
               <div
                 className="
-                bg-white/5
+                bg-white/[0.03]
                 backdrop-blur-xl
                 border
-                border-white/10
+                border-white/8
                 rounded-3xl
                 p-6
-                hover:border-purple-500/40
-                hover:shadow-[0_0_40px_rgba(168,85,247,0.35)]
+                hover:border-violet-400/60/40
+                hover:shadow-[0_0_50px_rgba(168,85,247,0.20)]
                 hover:-translate-y-2
                 transition-all
                 duration-500
@@ -130,13 +130,13 @@ const About = () => {
 
               <div
                 className="
-                bg-white/5
+                bg-white/[0.03]
                 backdrop-blur-xl
                 border
-                border-white/10
+                border-white/8
                 rounded-3xl
                 p-6
-                hover:border-orange-400/40
+                hover:border-pink-400/50
                 hover:shadow-[0_0_40px_rgba(249,115,22,0.3)]
                 hover:-translate-y-2
                 transition-all
@@ -172,14 +172,14 @@ const About = () => {
                   px-5
                   py-2.5
                   rounded-full
-                  bg-white/5
+                  bg-white/[0.03]
                   backdrop-blur-xl
                   border
-                  border-white/10
+                  border-white/8
                   text-gray-300
                   hover:text-white
-                  hover:border-purple-500
-                  hover:bg-purple-500/20
+                  hover:border-violet-400/60
+                  hover:bg-violet-600/20
                   hover:shadow-[0_0_20px_rgba(168,85,247,0.45)]
                   hover:-translate-y-1
                   transition-all
@@ -208,14 +208,14 @@ const About = () => {
                 <div
                   key={item.label}
                   className="
-                  bg-white/5
+                  bg-white/[0.03]
                   backdrop-blur-xl
                   border
-                  border-white/10
+                  border-white/8
                   rounded-3xl
                   p-6
                   text-center
-                  hover:border-purple-500
+                  hover:border-violet-400/60
                   hover:shadow-[0_0_30px_rgba(168,85,247,0.35)]
                   hover:-translate-y-2
                   transition-all
@@ -223,7 +223,7 @@ const About = () => {
                 "
                 >
 
-                  <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+                  <h2 className="text-4xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
                     {item.number}
                   </h2>
 
