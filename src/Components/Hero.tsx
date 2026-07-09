@@ -12,7 +12,7 @@ const Hero = () => {
         {/* Left */}
         <div>
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-5 py-2 text-sm text-purple-300 mt-20">
+          <div className="mt-[120px] inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-5 py-2 text-sm text-purple-300 ">
             <span className="h-2 w-2 rounded-full bg-green-400"></span>
             Available for AI/ML & Full Stack Roles
           </div>
