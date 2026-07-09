@@ -76,10 +76,13 @@ const Contact = () => {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
-            I'm actively looking for AI/ML Engineer, Generative AI,
-            Agentic AI and Full Stack Developer opportunities.
-            Whether you have an exciting project, internship,
-            or simply want to connect, I'd love to hear from you.
+            I'm actively looking for AI/ML Engineer,
+            Generative AI, Agentic AI and
+            Full Stack Developer opportunities.
+
+            Whether you have an exciting project,
+            internship or full-time role,
+            I'd love to connect.
           </p>
 
         </div>
@@ -97,13 +100,15 @@ const Contact = () => {
             <div className="rounded-3xl border border-green-500/20 bg-green-500/10 p-6">
 
               <h3 className="text-2xl font-semibold text-green-400">
-                🟢 Available
+                🟢 Available for Opportunities
               </h3>
 
-              <p className="mt-3 text-gray-300">
+              <p className="mt-3 leading-7 text-gray-300">
                 Open to Full-Time, Internship,
-                AI/ML Engineer, GenAI Engineer,
-                Agentic AI and Full Stack roles.
+                AI/ML Engineer,
+                Generative AI,
+                Agentic AI,
+                and Full Stack Developer roles.
               </p>
 
             </div>
@@ -150,7 +155,7 @@ const Contact = () => {
 
             </div>
 
-            {/* Social Buttons */}
+            {/* Social Links */}
 
             <div className="flex flex-wrap gap-4">
 
@@ -158,7 +163,7 @@ const Contact = () => {
                 href="https://github.com/shivansh4565"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 hover:border-purple-500 transition"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 transition hover:border-purple-500 hover:bg-white/10"
               >
                 GitHub
               </a>
@@ -167,17 +172,33 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/s4565"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 hover:border-purple-500 transition"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 transition hover:border-purple-500 hover:bg-white/10"
               >
                 LinkedIn
               </a>
 
+            </div>
+
+            {/* Resume Buttons */}
+
+            <div className="flex flex-wrap gap-4">
+
               <a
-                href="/Shivansh_Saxena_Resume.pdf"
+                href="/Shivansh_Saxena_aiml.pdf"
                 target="_blank"
-                className="rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 font-semibold"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 px-6 py-3 font-semibold transition hover:scale-105"
               >
-                Resume
+                🤖 AI/ML Resume
+              </a>
+
+              <a
+                href="/Shivansh_Saxena_Fullstack.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 font-semibold transition hover:border-purple-500 hover:bg-white/10"
+              >
+                💻 Full Stack Resume
               </a>
 
             </div>
@@ -193,8 +214,9 @@ const Contact = () => {
               className="space-y-6"
             >
 
-              <div>
+                            {/* Name */}
 
+              <div>
                 <label className="mb-2 block text-gray-300">
                   Full Name
                 </label>
@@ -204,13 +226,28 @@ const Contact = () => {
                   name="name"
                   required
                   placeholder="John Doe"
-                  className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-purple-500"
+                  className="
+                    w-full
+                    rounded-xl
+                    border
+                    border-white/10
+                    bg-black/30
+                    px-5
+                    py-4
+                    text-white
+                    outline-none
+                    transition-all
+                    duration-300
+                    focus:border-purple-500
+                    focus:ring-2
+                    focus:ring-purple-500/20
+                  "
                 />
-
               </div>
 
-              <div>
+              {/* Email */}
 
+              <div>
                 <label className="mb-2 block text-gray-300">
                   Email Address
                 </label>
@@ -220,13 +257,28 @@ const Contact = () => {
                   name="email"
                   required
                   placeholder="john@example.com"
-                  className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-purple-500"
+                  className="
+                    w-full
+                    rounded-xl
+                    border
+                    border-white/10
+                    bg-black/30
+                    px-5
+                    py-4
+                    text-white
+                    outline-none
+                    transition-all
+                    duration-300
+                    focus:border-purple-500
+                    focus:ring-2
+                    focus:ring-purple-500/20
+                  "
                 />
-
               </div>
 
-              <div>
+              {/* Subject */}
 
+              <div>
                 <label className="mb-2 block text-gray-300">
                   Subject
                 </label>
@@ -234,14 +286,29 @@ const Contact = () => {
                 <input
                   type="text"
                   name="subject"
-                  placeholder="Project Discussion"
-                  className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-purple-500"
+                  placeholder="AI Project • Internship • Hiring"
+                  className="
+                    w-full
+                    rounded-xl
+                    border
+                    border-white/10
+                    bg-black/30
+                    px-5
+                    py-4
+                    text-white
+                    outline-none
+                    transition-all
+                    duration-300
+                    focus:border-purple-500
+                    focus:ring-2
+                    focus:ring-purple-500/20
+                  "
                 />
-
               </div>
 
-                            <div>
+              {/* Message */}
 
+              <div>
                 <label className="mb-2 block text-gray-300">
                   Message
                 </label>
@@ -250,49 +317,62 @@ const Contact = () => {
                   name="message"
                   rows={6}
                   required
-                  placeholder="Tell me about your project..."
-                  className="w-full rounded-xl border border-white/10 bg-black/30 px-5 py-4 outline-none transition focus:border-purple-500 resize-none"
+                  placeholder="Tell me about your project, internship, collaboration or hiring opportunity..."
+                  className="
+                    w-full
+                    resize-none
+                    rounded-xl
+                    border
+                    border-white/10
+                    bg-black/30
+                    px-5
+                    py-4
+                    text-white
+                    outline-none
+                    transition-all
+                    duration-300
+                    focus:border-purple-500
+                    focus:ring-2
+                    focus:ring-purple-500/20
+                  "
                 />
-
               </div>
+
+              {/* Submit */}
 
               <button
                 type="submit"
                 disabled={loading}
                 className="
-                w-full
-                rounded-xl
-                bg-gradient-to-r
-                from-purple-600
-                via-pink-600
-                to-orange-500
-                py-4
-                font-semibold
-                text-white
-                transition
-                duration-300
-                hover:scale-[1.02]
-                hover:shadow-[0_0_35px_rgba(168,85,247,.35)]
-                disabled:opacity-60
-                disabled:cursor-not-allowed
-              "
+                  w-full
+                  rounded-xl
+                  bg-gradient-to-r
+                  from-purple-600
+                  via-pink-600
+                  to-orange-500
+                  py-4
+                  font-semibold
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:scale-[1.02]
+                  hover:shadow-[0_0_35px_rgba(168,85,247,.40)]
+                  disabled:cursor-not-allowed
+                  disabled:opacity-60
+                "
               >
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? "Sending Message..." : "Send Message 🚀"}
               </button>
+
+              {/* Status */}
 
               {result && (
                 <div
-                  className={`
-                  rounded-xl
-                  border
-                  p-4
-                  text-center
-                  ${
+                  className={`rounded-xl border p-4 text-center font-medium ${
                     result.includes("success")
                       ? "border-green-500/30 bg-green-500/10 text-green-400"
                       : "border-red-500/30 bg-red-500/10 text-red-400"
-                  }
-                `}
+                  }`}
                 >
                   {result}
                 </div>
@@ -304,34 +384,58 @@ const Contact = () => {
 
         </div>
 
-        {/* Footer */}
+                {/* Footer */}
 
-        <footer className="mt-24 border-t border-white/10 pt-10">
+        <footer className="mt-24 border-t border-white/10 pt-12">
 
-          <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+          <div className="flex flex-col items-center justify-between gap-10 lg:flex-row">
+
+            {/* Left */}
 
             <div>
 
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-3xl font-bold">
+
                 Shivansh{" "}
+
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
                   Saxena
                 </span>
+
               </h3>
 
-              <p className="mt-2 text-gray-500">
+              <p className="mt-3 max-w-lg leading-7 text-gray-400">
+
                 AI/ML Engineer • Generative AI • Agentic AI • Full Stack Developer
+
+                <br />
+
+                Passionate about building intelligent AI systems,
+                scalable web applications and production-ready software.
+
               </p>
 
             </div>
 
-            <div className="flex flex-wrap justify-center gap-5">
+            {/* Right */}
+
+            <div className="flex flex-wrap justify-center gap-4">
 
               <a
                 href="https://github.com/shivansh4565"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 transition hover:border-purple-500 hover:bg-white/10"
+                className="
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/5
+                  px-6
+                  py-3
+                  transition-all
+                  hover:border-purple-500
+                  hover:bg-white/10
+                "
               >
                 GitHub
               </a>
@@ -340,38 +444,75 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/s4565"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 transition hover:border-purple-500 hover:bg-white/10"
+                className="
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/5
+                  px-6
+                  py-3
+                  transition-all
+                  hover:border-purple-500
+                  hover:bg-white/10
+                "
               >
                 LinkedIn
               </a>
 
               <a
-                href="/Shivansh_Saxena_Resume.pdf"
+                href="/Shivansh_Saxena_aiml.pdf"
                 target="_blank"
-                className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 transition hover:border-purple-500 hover:bg-white/10"
+                rel="noopener noreferrer"
+                className="
+                  rounded-xl
+                  bg-gradient-to-r
+                  from-purple-600
+                  via-pink-600
+                  to-orange-500
+                  px-6
+                  py-3
+                  font-semibold
+                  transition-all
+                  hover:scale-105
+                "
               >
-                Resume
+                🤖 AI/ML Resume
               </a>
 
               <a
-                href="mailto:shivanshsaxena108@gmail.com"
-                className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 transition hover:border-purple-500 hover:bg-white/10"
+                href="/Shivansh_Saxena_Fullstack.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  rounded-xl
+                  border
+                  border-white/10
+                  bg-white/5
+                  px-6
+                  py-3
+                  font-semibold
+                  transition-all
+                  hover:border-purple-500
+                  hover:bg-white/10
+                "
               >
-                Email
+                💻 Full Stack Resume
               </a>
 
             </div>
 
           </div>
 
-          <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-gray-500 md:flex-row">
+          {/* Bottom */}
+
+          <div className="mt-12 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-8 text-sm text-gray-500 md:flex-row">
 
             <p>
-              © {new Date().getFullYear()} Shivansh Saxena. All rights reserved.
+              © {new Date().getFullYear()} Shivansh Saxena. All Rights Reserved.
             </p>
 
             <p>
-              Built with React • TypeScript • Tailwind CSS
+              Designed & Developed with ❤️ using React, TypeScript & Tailwind CSS
             </p>
 
           </div>
