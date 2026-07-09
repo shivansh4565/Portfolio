@@ -1,73 +1,180 @@
 import React, { useState } from "react";
 
+const navItems = [
+  { name: "Home", href: "#hero" },
+  { name: "About", href: "#about" },
+  { name: "Expertise", href: "#services" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
+
 const Navbar: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const scrollAndClose = () => setIsOpen(false);
+  const closeMenu = () => setIsOpen(false);
 
-    return (
-        <nav className="fixed w-full top-0 z-50 bg-black backdrop-blur-md text-white shadow-md rounded-xl">
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                {/* Logo */}
-                <a
-                    href="#hero"
-                    className="text-2xl font-bold tracking-wide hover:text-indigo-400 transition-colors duration-300"
-                >
-                    Shivansh
-                </a>
+  return (
+    <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
 
-                {/* Desktop Links */}
-                <div className="hidden md:flex space-x-8">
-                    <a href="#hero" className="hover:text-indigo-400 transition">Home</a>
-                    <a href="#about" className="hover:text-indigo-400 transition">About Me</a>
-                    <a href="#services" className="hover:text-indigo-400 transition">Services</a>
-                    <a href="#portfolio" className="hover:text-indigo-400 transition">Portfolio</a>
-                    <a href="#contact" className="hover:text-indigo-400 transition">Contact</a>
-                </div>
+      <nav
+        className="
+        w-full
+        max-w-7xl
+        rounded-2xl
+        border
+        border-white/10
+        bg-white/5
+        backdrop-blur-2xl
+        shadow-[0_0_30px_rgba(168,85,247,0.15)]
+      "
+      >
+        <div className="flex items-center justify-between px-8 py-4">
 
-                {/* Button */}
-                <div className="hidden md:block">
-                    <a
-                        href="#contact"
-                        onClick={scrollAndClose}
-                        className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold shadow-md 
-                bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 hover:scale-105"
-                    >
-                        Connect With Me
-                    </a>
-                </div>
+          {/* Logo */}
 
-                {/* Mobile Menu Button */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden flex flex-col space-y-1 focus:outline-none"
-                >
-                    <span className="block w-6 h-0.5 bg-white"></span>
-                    <span className="block w-6 h-0.5 bg-white"></span>
-                    <span className="block w-6 h-0.5 bg-white"></span>
-                </button>
-            </div>
+          <a
+            href="#hero"
+            className="text-3xl font-bold tracking-wide"
+          >
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+              Shivansh
+            </span>
+          </a>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden bg-black/90 text-center py-4 space-y-4">
-                    <a href="#hero" onClick={scrollAndClose} className="block hover:text-indigo-400">Home</a>
-                    <a href="#about" onClick={scrollAndClose} className="block hover:text-indigo-400">About Me</a>
-                    <a href="#services" onClick={scrollAndClose} className="block hover:text-indigo-400">Services</a>
-                    <a href="#portfolio" onClick={scrollAndClose} className="block hover:text-indigo-400">Portfolio</a>
-                    <a href="#contact" onClick={scrollAndClose} className="block hover:text-indigo-400">Contact</a>
-                    <a
-                        href="#contact"
-                        onClick={scrollAndClose}
-                        className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold shadow-md 
-                    bg-[length:200%_200%] bg-left hover:bg-right transition-all duration-500 hover:scale-105"
-                    >
-                        Connect With Me
-                    </a>
-                </div>
-            )}
-        </nav>
-    );
+          {/* Desktop */}
+
+          <div className="hidden lg:flex items-center gap-10">
+
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="
+                relative
+                text-gray-300
+                hover:text-white
+                transition
+
+                after:absolute
+                after:left-0
+                after:-bottom-2
+                after:h-[2px]
+                after:w-0
+                after:bg-gradient-to-r
+                after:from-purple-500
+                after:to-pink-500
+                after:transition-all
+                hover:after:w-full
+              "
+              >
+                {item.name}
+              </a>
+            ))}
+
+          </div>
+
+          {/* CTA */}
+
+          <a
+            href="#contact"
+            className="
+            hidden
+            lg:flex
+            items-center
+            rounded-full
+            bg-gradient-to-r
+            from-purple-600
+            via-pink-600
+            to-orange-500
+            px-6
+            py-3
+            font-semibold
+            text-white
+            shadow-[0_0_20px_rgba(168,85,247,.35)]
+            hover:scale-105
+            hover:shadow-[0_0_35px_rgba(168,85,247,.55)]
+            transition-all
+            duration-300
+          "
+          >
+            Let's Connect
+          </a>
+
+          {/* Mobile Button */}
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden relative h-8 w-8"
+          >
+            <span
+              className={`absolute h-[2px] w-7 bg-white transition-all ${
+                isOpen ? "rotate-45 top-4" : "top-2"
+              }`}
+            />
+
+            <span
+              className={`absolute top-4 h-[2px] w-7 bg-white transition-all ${
+                isOpen ? "opacity-0" : ""
+              }`}
+            />
+
+            <span
+              className={`absolute h-[2px] w-7 bg-white transition-all ${
+                isOpen ? "-rotate-45 top-4" : "top-6"
+              }`}
+            />
+          </button>
+
+        </div>
+
+        {/* Mobile Menu */}
+
+        <div
+          className={`
+          overflow-hidden
+          transition-all
+          duration-500
+          ${isOpen ? "max-h-96 py-6" : "max-h-0"}
+        `}
+        >
+          <div className="flex flex-col items-center gap-6">
+
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={closeMenu}
+                className="text-lg text-gray-300 hover:text-purple-400 transition"
+              >
+                {item.name}
+              </a>
+            ))}
+
+            <a
+              href="#contact"
+              onClick={closeMenu}
+              className="
+              rounded-full
+              bg-gradient-to-r
+              from-purple-600
+              via-pink-600
+              to-orange-500
+              px-6
+              py-3
+              font-semibold
+              text-white
+            "
+            >
+              Let's Connect
+            </a>
+
+          </div>
+        </div>
+
+      </nav>
+
+    </header>
+  );
 };
 
 export default Navbar;
