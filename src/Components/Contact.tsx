@@ -383,11 +383,13 @@ const Contact = () => {
       </div>
     )}
 
-  </form>
+ </form>
 
-</div>
+</div>   {/* End RIGHT */}
 
-        {/* Footer */}
+</div>   {/* <-- ADD THIS (closes lg:grid-cols-2) */}
+
+{/* Footer */}
 
 <footer className="mt-24 border-t border-white/10 pt-12">
 
