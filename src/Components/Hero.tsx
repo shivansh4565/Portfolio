@@ -6,14 +6,7 @@ const Hero = () => {
     >
       {/* Background */}
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#8b5cf61a,transparent_45%)]" />
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,#d946ef1a,transparent_45%)]" />
-
-      <div className="absolute -top-40 -left-32 h-[550px] w-[550px] rounded-full bg-violet-600/15 blur-[180px]" />
-
-      <div className="absolute bottom-0 right-0 h-[550px] w-[550px] rounded-full bg-fuchsia-600/15 blur-[180px]" />
-
+    
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-24 lg:grid-cols-[1.1fr_0.9fr]">
 
         {/* LEFT */}
@@ -281,9 +274,6 @@ const Hero = () => {
 
 <div className="relative flex justify-center">
 
-  {/* Floating Glow */}
-
-  <div className="absolute h-[520px] w-[520px] rounded-full bg-gradient-to-r from-violet-600/20 via-fuchsia-500/20 to-pink-500/20 blur-[120px] animate-pulse"></div>
 
   {/* Glass Card */}
 
@@ -334,7 +324,7 @@ const Hero = () => {
 
 {/* Bottom Gradient */}
 
-<div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent"></div>
+
 
 </section>
   );
