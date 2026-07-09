@@ -44,44 +44,65 @@ const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#050505] py-24 text-white"
+      className="relative overflow-hidden bg-transparent py-24 text-white"
     >
-      {/* Background Glow */}
-      <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-purple-500/20 blur-[140px]" />
-      <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-pink-500/20 blur-[140px]" />
+      {/* Soft Background Glow */}
+
+      <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-violet-600/15 blur-[160px]" />
+
+      <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-fuchsia-600/15 blur-[160px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
+
         {/* Heading */}
 
         <div className="mb-16 text-center">
+
           <h2 className="text-5xl font-bold">
+
             Core{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+
+            <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
+
               Expertise
+
             </span>
+
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
+
             Passionate about building intelligent AI systems and scalable
             full-stack applications by combining Machine Learning,
             Deep Learning, Generative AI, Agentic AI, and modern web
             technologies.
+
           </p>
+
         </div>
 
         {/* Cards */}
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {servicesData.map((service) => (
-            <ServiceCard
-              key={service.number}
-              number={service.number}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
-        </div>
+
+        {/* Cards */}
+
+<div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+  {servicesData.map((service) => (
+
+    <ServiceCard
+      key={service.number}
+      number={service.number}
+      title={service.title}
+      description={service.description}
+    />
+
+  ))}
+
+</div>
+
       </div>
+
     </section>
   );
 };
