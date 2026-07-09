@@ -19,57 +19,111 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         rounded-3xl
         border
         border-white/10
-        bg-white/5
+        bg-white/[0.03]
         backdrop-blur-xl
         p-8
         transition-all
         duration-500
         hover:-translate-y-3
-        hover:border-purple-500/40
-        hover:shadow-[0_0_45px_rgba(168,85,247,0.35)]
+        hover:border-violet-400/50
+        hover:shadow-[0_0_40px_rgba(139,92,246,0.25)]
         group
       "
     >
-      {/* Glow Background */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-purple-500/10 via-pink-500/5 to-orange-500/10"></div>
+
+            {/* Glow Background */}
+
+      <div
+        className="
+          absolute
+          inset-0
+          opacity-0
+          group-hover:opacity-100
+          transition-opacity
+          duration-500
+          bg-gradient-to-br
+          from-violet-500/10
+          via-fuchsia-500/5
+          to-pink-500/10
+        "
+      ></div>
 
       {/* Animated Top Border */}
-      <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+
+      <div
+        className="
+          absolute
+          top-0
+          left-0
+          h-1
+          w-full
+          bg-gradient-to-r
+          from-violet-500
+          via-fuchsia-500
+          to-pink-500
+          scale-x-0
+          group-hover:scale-x-100
+          transition-transform
+          duration-500
+          origin-left
+        "
+      ></div>
 
       {/* Number */}
+
       <span className="absolute top-6 right-6 text-6xl font-black text-white/10 select-none">
         {number}
       </span>
 
       {/* Title */}
-      <h2 className="relative z-10 text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
+
+      <h2 className="relative z-10 text-2xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
         {title}
       </h2>
 
       {/* Description */}
-      <p className="relative z-10 mt-5 text-gray-400 leading-7">
+
+      <p className="relative z-10 mt-5 text-zinc-400 leading-7">
         {description}
       </p>
 
       {/* Animated Divider */}
-      <div className="relative z-10 mt-8 h-[2px] w-12 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-500"></div>
 
-      {/* Learn More */}
+      <div
+        className="
+          relative
+          z-10
+          mt-8
+          h-[2px]
+          w-12
+          bg-gradient-to-r
+          from-violet-500
+          to-fuchsia-500
+          group-hover:w-full
+          transition-all
+          duration-500
+        "
+      ></div>
+
+            {/* Learn More */}
+
       <button
         type="button"
         className="
           relative
           z-10
           mt-6
-          text-purple-400
           font-medium
+          text-violet-400
           transition-all
           duration-300
           group-hover:translate-x-2
+          group-hover:text-fuchsia-400
         "
       >
         Learn More →
       </button>
+
     </div>
   );
 };
