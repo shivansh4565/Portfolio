@@ -199,7 +199,7 @@ const Hero = () => {
   {/* LinkedIn */}
 
   <a
-    href="https://linkedin.com/in/YOUR-LINKEDIN"
+    href="https://www.linkedin.com/in/s4565/"
     target="_blank"
     rel="noopener noreferrer"
     className="
