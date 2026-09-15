@@ -87,6 +87,14 @@ const PortfolioSection = () => {
       demo: "https://atsense-frontend.onrender.com",
       github: "https://github.com/shivansh4565/ATSense",
     },
+      {
+      image: "/Intervia.png",
+      title: "Intervia",
+      subtitle:
+        "AI Interview Platform with resume-based question generation, evaluation, analytics & PDF reports.",
+      demo: "https://intervia-client.onrender.com",
+      github: "https://github.com/shivansh4565/Intervia",
+    },
     {
       image: "/AskAKTU.png",
       title: "AskAKTU",
@@ -103,14 +111,7 @@ const PortfolioSection = () => {
       demo: "https://deepscope-ai.streamlit.app",
       github: "https://github.com/shivansh4565/DeepScope",
     },
-    {
-      image: "/Intervia.png",
-      title: "Intervia",
-      subtitle:
-        "AI Interview Platform with resume-based question generation, evaluation, analytics & PDF reports.",
-      demo: "https://intervia-client.onrender.com",
-      github: "https://github.com/shivansh4565/Intervia",
-    },
+  
   ];
 
   return (
