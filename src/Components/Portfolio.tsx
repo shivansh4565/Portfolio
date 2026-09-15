@@ -96,7 +96,7 @@ const PortfolioSection = () => {
       github: "https://github.com/shivansh4565/Intervia",
     },
     {
-      image: "/AskAKTU.png",
+      image: "/AKTU2.png",
       title: "AskAKTU",
       subtitle:
         "AI College Assistant built using Conditional RAG, LangGraph, FAISS & Groq LLM.",
