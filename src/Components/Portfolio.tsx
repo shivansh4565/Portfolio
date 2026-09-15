@@ -27,8 +27,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       hover:-translate-y-2
     "
     >
-      {/* Image */}
-
       <div className="overflow-hidden">
         <img
           src={image}
@@ -36,8 +34,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="w-full h-60 object-cover transition duration-700 group-hover:scale-110"
         />
       </div>
-
-      {/* Content */}
 
       <div className="p-6">
         <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
@@ -49,23 +45,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </p>
 
         <div className="flex gap-3 mt-6">
-
           <a
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
             className="
-            flex-1
-            rounded-xl
-            bg-gradient-to-r
-            from-purple-600
-            to-pink-600
-            py-2.5
-            text-center
-            font-semibold
-            text-white
-            hover:opacity-90
-            transition
+            flex-1 rounded-xl bg-gradient-to-r
+            from-purple-600 to-pink-600 py-2.5
+            text-center font-semibold text-white
+            hover:opacity-90 transition
           "
           >
             Live Demo
@@ -76,22 +64,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             className="
-            flex-1
-            rounded-xl
-            border
-            border-white/20
-            py-2.5
-            text-center
-            font-semibold
-            text-white
-            hover:bg-white
-            hover:text-black
-            transition
+            flex-1 rounded-xl border border-white/20
+            py-2.5 text-center font-semibold text-white
+            hover:bg-white hover:text-black transition
           "
           >
             GitHub
           </a>
-
         </div>
       </div>
     </div>
@@ -100,6 +79,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
 const PortfolioSection = () => {
   const projects = [
+    {
+      image: "/ATSense.png",
+      title: "ATSense",
+      subtitle:
+        "AI Resume Intelligence Platform for ATS scoring, keyword analysis, actionable feedback, AI-powered improvements & PDF export.",
+      demo: "https://atsense-frontend.onrender.com",
+      github: "https://github.com/shivansh4565/ATSense",
+    },
     {
       image: "/AskAKTU.png",
       title: "AskAKTU",
