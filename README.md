@@ -14,7 +14,7 @@ A modern developer portfolio showcasing my projects, technical skills, and exper
 
 ## 🌐 Live Demo
 
-🔗 https://portfolio-eta-ten-39.vercel.app/
+🔗(https://shivansh-ai-dev.vercel.app/)
 
 ## 📫 Connect with Me
 
