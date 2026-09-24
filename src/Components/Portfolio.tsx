@@ -118,7 +118,7 @@ const PortfolioSection = () => {
       title: "DubSync AI 2.0",
       subtitle:
         "Autonomous Multilingual Video Dubbing & Translation engine powered by Faster-Whisper, Edge-TTS, LLM translation, time-aligned audio synthesis & subtitle generation.",
-      demo: "https://dub-sync-ai-2-0.vercel.app",
+      demo: "https://dub-sync-ai-2-0.vercel.app/",
       github: "https://github.com/shivansh4565/DubSync-AI-2.0",
     },
 
