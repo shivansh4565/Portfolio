@@ -112,7 +112,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
 const PortfolioSection = () => {
   const projects = [
-     {
+    // 1. DubSync AI 2.0
+    {
+      image: "/dubsync.png",
+      title: "DubSync AI 2.0",
+      subtitle:
+        "Autonomous Multilingual Video Dubbing & Translation engine powered by Faster-Whisper, Edge-TTS, LLM translation, time-aligned audio synthesis & subtitle generation.",
+      demo: "https://dub-sync-ai-2-0.vercel.app",
+      github: "https://github.com/shivansh4565/DubSync-AI-2.0",
+    },
+
+    // 2. SplitPay
+    {
       image: "/SplitPay.png",
       title: "SplitPay",
       subtitle:
@@ -120,7 +131,8 @@ const PortfolioSection = () => {
       demo: "https://splitpay-hkny.onrender.com/",
       github: "https://github.com/shivansh4565/SplitPay",
     },
-    // 1. ATSense
+
+    // 3. ATSense
     {
       image: "/ATSense.png",
       title: "ATSense",
@@ -130,7 +142,7 @@ const PortfolioSection = () => {
       github: "https://github.com/shivansh4565/ATSense",
     },
 
-    // 2. Intervia
+    // 4. Intervia
     {
       image: "/Intervia.png",
       title: "Intervia",
@@ -140,7 +152,7 @@ const PortfolioSection = () => {
       github: "https://github.com/shivansh4565/Intervia",
     },
 
-    // 3. AskAKTU
+    // 5. AskAKTU
     {
       image: "/AKTU.png",
       title: "AskAKTU",
@@ -150,7 +162,7 @@ const PortfolioSection = () => {
       github: "https://github.com/shivansh4565/AskAKTU",
     },
 
-    // 4. DeepScope
+    // 6. DeepScope
     {
       image: "/DeepScope.png",
       title: "DeepScope",
@@ -159,9 +171,6 @@ const PortfolioSection = () => {
       demo: "https://deepscope-ai.streamlit.app",
       github: "https://github.com/shivansh4565/DeepScope",
     },
-
-    // 5. SplitPay
-   
   ];
 
   return (
